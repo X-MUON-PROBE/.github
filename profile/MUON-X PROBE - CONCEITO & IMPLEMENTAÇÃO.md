@@ -22,7 +22,7 @@ Tendo em conta a meta de, após um conjunto de observações à superfície, pod
 	<div>
 		<p>Partindo do conceito demonstrado na reunião anterior, um detetor de Geiger-Muller (concebido no LIP) e um sensor de temperatura e pressão barométrica (BMP280) foram conectados ao microcontrolador <i>Raspberry Pi Pico W</i>, tendo sido devidamente programado para registar a contagem de muões detetados e monitorizar a temperatura e pressão do ambiente em que estas medições são realizadas.</p>
 	</div>
-	<img src="ASSETS/BASIC_MUON_COUNTER_CIRCUIT.png" style="width:30%"/>
+	<img src="BASIC_MUON_COUNTER_CIRCUIT.png" style="width:30%"/>
 </div>
 
 O módulo Raspberry Pi é programado através do ambiente integrado de desenvolvimento (IDE) Arduino IDE, na liguagem de baixo nivel C++, permitindo um ótimo controlo de componentes externos ao módulo ligados, entre os quais o contador de Geiger-Muller e o sensor BMP280.
@@ -177,7 +177,7 @@ Dada a natureza experimental deste projeto, todos os componentes utiizados foram
 
 Após o desenvolvimento deste dispositivo, foi obtido um modelo final representado pelo circuito esquematizado abaixo.
 
-<img src="ASSETS/MUON-X_PROBE.png">
+![[MUON-X_PROBE.png]]
 
 
 <div style="display: flex; gap: 10px;">
@@ -205,7 +205,7 @@ Para possibilitar a comunicação com a sonda, foi desenvolvido um módulo de co
 
 Após o desenvolvimento deste dispositivo, foi obtido um modelo final representado pelo circuito esquematizado abaixo.
 
-<img src="ASSETS/XMUON_GROUND_COMMS_DEVICE.png"/>
+![[XMUON_GROUND_COMMS_DEVICE.png]]
 
 Neste circuito, a Ethernet Shield e a Screw Shield são acopladas nos pinos do Arduino Leonardo, de forma a formarem um estrutura em pilha (daí a designação shield - escudo).
 
@@ -233,13 +233,13 @@ Visto que o ambiente gráfico de visualização de dados é atualizado em tempo 
 
 A estrutura da base de dados é esquematizada por este diagrama ER (tipo de esquema frequentemente utilizado durante a modelação teórica de bases de dados):
 
-<img src="ASSETS/Pasted image 20260531220651.png" />
+![[Pasted image 20260531220651.png]]
 
 ##### Serviço API:
 
 Para a recepção dos dados enviados pelo dispositivo receptor, uma API (serviço backend de longa duração, que responde a pedidos enviados por uma aplicação frontend, como, por exemplo, o website do software), foi desenvolvida em ASP.NET CORE (C#), escutando todos os pacotes de informação da experiência, e armazenando a mesma na base de dados, de forma estruturada. Durante este processo de inserção de dados, são também geradas estatísticas mais complexas com base nos dados "crus" recebidos, visto que o tamanho dos pacotes de informação enviados pela sonda são limitados a um reduzido tamanho de 58 bytes.
 
-<img src="ASSETS/Screenshot (144).png" />
+![[Screenshot (144).png]]
 
 Tanto o código da API como os scripts de criação da base de dados estão disponíveis no repositório Github com a seguinte hiperligação: https://github.com/X-MUON-PROBE/XMUON-TELEMETRY-API/.
 
@@ -248,7 +248,7 @@ Tanto o código da API como os scripts de criação da base de dados estão disp
 Finalmente, de modo a permitir a visualização dos dados de telemetria obtidos, é desenvolvida uma interface visual (página desenvolvida em REACT), acessível através do browser do PC em que o sistema é executado.
 Através de gráficos e valores numéricos, são apresentados o estado atual do dispositivo (temperatura dos componentes, orientação, aceleração e rotação da sonda) e as estatísticas calculadas através dos dados obtidos, incluindo a progressão do número de contagens de partículas em função do tempo, dos registos efetuados, ou a variação de temperatura, pressão e altitude em função do tempo.
 
-<img src="ASSETS/Pasted image 20260531220100.png" />
+![[Pasted image 20260531220100.png]]
 
 
 O código desenvolvido no âmbito desta página está disponivel no seguinte  repositório Github: https://github.com/X-MUON-PROBE/XMUON-TELEMETRY-OPS-PORTAL.
@@ -258,7 +258,7 @@ O código desenvolvido no âmbito desta página está disponivel no seguinte  re
 
 Após o desenvolvimento deste sistema integrado de deteção de muões cósmicos, resta testar a viabilidade do mesmo. De forma a simular um cenário de experiência real, a sonda foi ligada e o recetor conectado a um computador que corre o software de telemetria. Após estabelecer ligação entre o PC e o recetor, criando uma nova experiência na interface web, é possivel visualizar os dados obtidos no ecrã do computador, tal como representado na figura.
 
-<img src="ASSETS/WhatsApp Image 2026-05-31 at 11.51.32 PM.jpeg" />
+![[WhatsApp Image 2026-05-31 at 11.51.32 PM.jpeg]]
 
 
 ## Considerações a conhecer em eventual lançamento:
